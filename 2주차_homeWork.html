@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- Webpage Title -->
+    <title>나의 쇼핑몰 작업 도전!</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+    </script>
+
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+    <!-- style -->
+    <style type="text/css">
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
+
+        .wrap {
+            width: 600px;
+            margin: 50px auto 10px auto;
+        }
+
+        .img {
+            background-image: url('http://storage.enuri.info/pic_upload/enurinews/700000/90000/794317/201812141312466_PZ28TIC2.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 600px;
+            height: 300px;
+        }
+
+        .info {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .user-info {
+            margin: 20px 5px auto 5px;
+        }
+
+        h1,
+        h5 {
+            display: inline;
+        }
+
+        .order {
+            text-align: center;
+        }
+
+        .orders {
+            margin-top: 100px;
+        }
+    </style>
+
+
+    <script>
+
+        function order() {
+            let name = $('#order_name').val();
+            let num = $('#order_count').val();
+            let address = $('#order_address').val();
+            let phone = $('#order_phone').val();
+
+            if (name == '') {
+                alert("이름 입력해주세요");
+                $('#order_name').focus();
+                return name;
+            } else if (num == '') {
+                alert("수량 입력해주세요!");
+                $('#order_count').focus();
+                return num;
+            } else if (address == '') {
+                alert("주소 입력해주세요!");
+                $('#order_address').focus();
+                return address;
+            } else if (phone == '') {
+                alert("전화번호 입력해주세요!");
+                $('#order_phone').focus();
+                return phone;
+            } else {
+                alert("주문완료");
+                let temp_html = '<tr>\
+                                <td>'+ name + '</td>\
+                                <td>'+ num + '</td>\
+                                <td>'+ address + '</td>\
+                                <td>'+ phone + '</td>\
+                            </tr>';
+                $('#order_add').append(temp_html);
+            }
+
+        }
+
+
+
+    </script>
+
+
+
+
+</head>
+
+<body data-gr-c-s-loaded="true">
+    <div class="wrap">
+        <div class="img"></div>
+        <div class="info">
+            <h1>양초를 팝니다</h1>
+            <h5>가격: 3,000원/개</h5>
+            <p>‘촛불의 시대, 집에서도 초를 켜세요’
+                향초를 선택할 때는 성분을 알고 구매하는 것이 좋습니다. 초의 재료 중 가장 많은 양을 차지하고 있는 것이 ‘왁스’인데요.
+                왁스는 천연왁스와 화학성분의 왁스로 구분됩니다. 천연왁스에는 소이 왁스, 비즈 왁스, 팜 왁스가 있고, 화학성분 왁스에는 파라핀왁스와 젤 왁스가 있는데요.
+                인공왁스는 발향이 강하고 다양한 향을 낼 수 있어 천연왁스에서는 느낄 수 없는 매력을 갖고 있지만, 연소할 때 이산화탄소와 벤젠, 그을음 등 몸에 해로운 물질이
+                나온다고 알려지면서 걱정하는 사람이 많아졌습니다. 이런 우려 때문인지 요즘은 천연왁스의 인기가 더욱 높아지고 있는데요. 연소 시 유해물질이 발생하지 않아 집에서 향초를 켜는 마니아들에게
+                많은
+                인기를 끌고 있습니다.
+            </p>
+        </div>
+        <div class="info">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">주문자 이름</span>
+                </div>
+                <input type="text" class="form-control" id="order_name" aria-describedby="basic-addon3">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">수량</label>
+                </div>
+                <select class="custom-select" id="order_count">
+                    <option selected="" value=""> -- 수량을 선택하세요 -- </option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">주소</span>
+                </div>
+                <input type="text" class="form-control" id="order_address" aria-describedby="basic-addon3">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">전화번호</span>
+                </div>
+                <input type="text" class="form-control" id="order_phone" aria-describedby="basic-addon3">
+            </div>
+            <div class="order">
+                <button onclick="order()" type="button" class="btn btn-primary">주문하기</button>
+
+
+            </div>
+            <p></p>
+            <div>
+                <table class="table" id="order_add">
+                    <tr>
+                        <th>이름</th>
+                        <th>수량</th>
+                        <th>주소</th>
+                        <th>전화번호</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
