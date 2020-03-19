@@ -111,6 +111,9 @@
 
         }
 
+        function remove(){
+            $('#order_add').empty();
+        }
 
 
     </script>
@@ -167,19 +170,28 @@
             </div>
             <div class="order">
                 <button onclick="order()" type="button" class="btn btn-primary">주문하기</button>
+                <button onclick="remove()" type="button" class="btn btn-primary">지우기</button>
 
+                
 
             </div>
             <p></p>
             <div>
-                <table class="table" id="order_add">
-                    <tr>
-                        <th>이름</th>
-                        <th>수량</th>
-                        <th>주소</th>
-                        <th>전화번호</th>
-                    </tr>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>이름</th>
+                            <th>수량</th>
+                            <th>주소</th>
+                            <th>전화번호</th>
+                        </tr>
+                    </tbody>
+                    <tbody class="table" id="order_add">
+
+                    </tbody>
+
                 </table>
+
             </div>
         </div>
 
