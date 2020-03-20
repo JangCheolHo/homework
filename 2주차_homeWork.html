@@ -98,20 +98,27 @@
                 alert("전화번호 입력해주세요!");
                 $('#order_phone').focus();
                 return phone;
-            } else {
-                alert("주문완료");
-                let temp_html = '<tr>\
+            } else if (phone != '') {
+                // 입력 값이 000-0000-0000 형식인지 확인한다.
+                let phoneNtmCk = /^[0-9]{3}-[0-9]{4}-[0-9]{4}$/;
+                if (!phoneNtmCk.test(phone)) {
+                    alert("휴대폰번호 오류!");
+                    $('#order_phone').focus();
+                } else {
+                    alert("주문완료");
+                    let temp_html = '<tr>\
                                 <td>'+ name + '</td>\
                                 <td>'+ num + '</td>\
                                 <td>'+ address + '</td>\
                                 <td>'+ phone + '</td>\
                             </tr>';
-                $('#order_add').append(temp_html);
+                    $('#order_add').append(temp_html);
+                }
             }
 
         }
 
-        function remove(){
+        function remove() {
             $('#order_add').empty();
         }
 
@@ -168,7 +175,7 @@
                 <button onclick="order()" type="button" class="btn btn-primary">주문하기</button>
                 <button onclick="remove()" type="button" class="btn btn-primary">지우기</button>
 
-                
+
 
             </div>
             <p></p>
