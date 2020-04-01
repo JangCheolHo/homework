@@ -1,0 +1,43 @@
+/* <!-- style -->
+<style type="text/css"> */
+    * {
+        font-family: 'Stylish', sans-serif;
+    }
+
+    .wrap {
+        width: 600px;
+        margin: 50px auto 10px auto;
+    }
+
+    .img {
+        background-image: url('http://storage.enuri.info/pic_upload/enurinews/700000/90000/794317/201812141312466_PZ28TIC2.jpg');
+        background-size: cover;
+        background-position: center;
+        width: 600px;
+        height: 300px;
+    }
+
+    .info {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .user-info {
+        margin: 20px 5px auto 5px;
+    }
+
+    h1,
+    h5 {
+        display: inline;
+    }
+
+    .order {
+        text-align: center;
+    }
+
+    .orders {
+        margin-top: 100px;
+    }
+
+
+/* </style> */
